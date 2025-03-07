@@ -9,18 +9,12 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://*.sprinklr.com/*"
-      ],
-      "js": [
-        "./static/js/content.js"
-      ],
+      "matches": ["https://*.sprinklr.com/*"],
+      "js": ["./static/js/content.js"],
       "run_at": "document_start"
     }
   ],
-  "host_permissions": [
-    "https://*.sprinklr.com/*"
-  ],
+  "host_permissions": ["https://*.sprinklr.com/*"],
   "background": {
     "service_worker": "./static/js/background.js"
   },
@@ -29,9 +23,10 @@
     "48": "logo192.png",
     "128": "logo192.png"
   },
-  "permissions": [
-    "storage",
-    "webRequest",
-    "tabs"
-  ]
+  "permissions": ["storage", "webRequest", "tabs"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "network-chunks@sprinklr.com"
+    }
+  }
 }

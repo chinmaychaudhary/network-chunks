@@ -1,5 +1,5 @@
 {
-  "name": "meet-tracker",
+  "name": "network-chunks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf build && craco build",
+    "build": "rm -rf build && craco build && ./postbuild.sh",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
