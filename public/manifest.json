@@ -26,7 +26,10 @@
   "permissions": ["storage", "webRequest", "tabs"],
   "browser_specific_settings": {
     "gecko": {
-      "id": "network-chunks@sprinklr.com"
+      "id": "network-chunks@sprinklr.com",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }
