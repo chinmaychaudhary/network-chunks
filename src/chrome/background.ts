@@ -20,7 +20,10 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         const result = details.url.match(/_next\/static\/chunks\/([a-zA-Z-]*)\./)?.[1];
-        const origin = (details.initiator || 'INITIATOR');
+        // Chrome exposes details.initiator (origin string)
+        // Firefox exposes details.originUrl (full URL)
+        const rawOriginUrl = details.initiator ?? (details as any).originUrl;
+        const origin = rawOriginUrl ? new URL(rawOriginUrl).origin : 'INITIATOR';
         const urls = originToUrls.get(origin);
         if(result && urls) {
             console.log(result);

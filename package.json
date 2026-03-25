@@ -1,5 +1,6 @@
 {
-  "name": "meet-tracker",
+  "name": "network-chunks",
+  "repository": "https://github.com/chinmaychaudhary/network-chunks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf build && craco build",
+    "build": "rm -rf build && craco build && ./postbuild.sh",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -48,5 +49,8 @@
     "@types/chrome": "^0.0.145",
     "@types/react-router-dom": "^5.1.8",
     "prettier": "^2.3.1"
+  },
+  "engines": {
+    "node": ">=16, <17"
   }
 }
